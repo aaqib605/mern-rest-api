@@ -1,0 +1,19 @@
+{
+  "name": "practice-mern-rest-api",
+  "version": "1.0.0",
+  "description": "Goal setter app built using react redux node mongoDB",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.0",
+    "nodemon": "^3.0.3"
+  },
+  "scripts": {
+    "server": "nodemon backend/server"
+  },
+  "author": "Aaqib Javaid",
+  "license": "ISC"
+}
