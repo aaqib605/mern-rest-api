@@ -27,16 +27,13 @@ const updateGoal = asyncHandler(async (req, res) => {
     throw new Error("Goal you're trying to update does not exist");
   }
 
-  // Check if the user trying to update the goal exists or not
-  const user = await User.findById(req.user._id);
-
-  if (!user) {
+  if (!req.user) {
     res.status(401);
     throw new Error("User trying to update the goal does not exist");
   }
 
   // Make sure the logged in user matches the goal user
-  if (goal.user.toString() !== user.id) {
+  if (goal.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized to update the goal");
   }
@@ -55,16 +52,13 @@ const deleteGoal = asyncHandler(async (req, res) => {
     throw new Error("Goal you're trying to delete does not exist");
   }
 
-  // Check if the user trying to delete the goal exists or not
-  const user = await User.findById(req.user._id);
-
-  if (!user) {
+  if (!req.user) {
     res.status(401);
     throw new Error("User trying to delete the goal does not exist");
   }
 
   // Make sure the logged in user matches the goal user
-  if (goal.user.toString() !== user.id) {
+  if (goal.user.toString() !== req.user.id) {
     res.status(401);
     throw new Error("User not authorized to delete the goal");
   }
