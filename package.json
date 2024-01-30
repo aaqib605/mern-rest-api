@@ -14,6 +14,7 @@
     "nodemon": "^3.0.3"
   },
   "scripts": {
+    "start": "node backend/server",
     "server": "nodemon backend/server"
   },
   "author": "Aaqib Javaid",
